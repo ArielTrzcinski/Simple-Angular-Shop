@@ -1,0 +1,40 @@
+<app-header>
+    <p levels>Herbaty Yerba Mate oraz akcesoria</p>
+  
+    <div content>
+      <p>{{product.caption}} </p>
+    </div>
+  
+    <div cartIcon>
+      <a [routerLink]="['/koszyk']" class="basketLink">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      </a>
+    </div>
+  </app-header>
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <a class="card m-3" style="width: 28rem;">
+      <img class="card-img-top" src={{product.url}} alt="Card image cap" width="500" height="auto">
+      <div class="card-body">
+        <div *ngIf="succes" class="alert alert-success" role="alert">
+          Dodano do koszyka!
+        </div>
+        <div *ngIf="wrong" class="alert alert-danger" role="alert">
+          Podaj ilość!
+        </div>
+        <h5 class="card-title">{{product.caption}}</h5>
+        <p class="card-text">Szczegółowy opis produktu.</p>
+        <p class="h6 mb-3">{{product.price | currency:"PLN"}}</p>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" min="1" placeholder="Ilość" aria-label="Recipient's username" aria-describedby="basic-addon2"
+            #quantity>
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">szt.</span>
+          </div>
+        </div>
+        <button class="btn btn-success" (click)="addToCart(product, quantity.value)">Do koszyka</button>
+      </div>
+    </a>
+  </div>
+</div>

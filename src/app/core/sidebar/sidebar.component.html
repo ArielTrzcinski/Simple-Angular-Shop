@@ -1,0 +1,11 @@
+<div class="sidebar">
+  <p class="logo">Yerba mate</p>
+  <nav>
+    <ul>
+      <li [routerLink]="['/wszystko']" [routerLinkActive]="'active'" (click)="filterBy('wszystkie produkty')">Wszystkie produkty</li>
+      <li [routerLink]="['/klasyczne']" [routerLinkActive]="'active'" (click)="filterBy('klasyczne')">Klasyczne</li>
+      <li [routerLink]="['/smakowe']" [routerLinkActive]="'active'" (click)="filterBy('smakowe')">Smakowe</li>
+      <li [routerLink]="['/akcesoria']" [routerLinkActive]="'active'" (click)="filterBy('akcesoria')">Akcesoria</li>
+    </ul>
+  </nav>
+</div>

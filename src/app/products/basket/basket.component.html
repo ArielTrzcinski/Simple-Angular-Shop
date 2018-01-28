@@ -1,0 +1,28 @@
+<app-header>
+    <p levels>Herbaty Yerba Mate oraz akcesoria</p>
+  
+    <div content>
+      <p>koszyk</p>
+    </div>
+  
+    <div cartIcon>
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    </div>
+  </app-header>
+
+
+  <div class="container">
+      <div class="row d-flex justify-content-center">
+        <a class="card m-3" style="width: 18rem;" *ngFor="let product of cartList">
+          <img class="card-img-top" src={{product.url}} alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title my-1">{{product.caption}}</h5>
+            <p class="card-text my-1" >{{product.quantity}} szt.</p>
+            <p class="h6 mb-3">{{product.totalCost | currency:"PLN"}}</p>
+            <button class="btn btn-danger" (click)="removeFromCart(this.productsService.cartList, 'id', product.id)">Usuń z koszyka</button>
+          </div>
+        </a>
+        
+      </div>
+      <p class="h4 float-right" *ngIf="cartList.length > 0">Razem do zapłaty: <strong>{{total | currency:'PLN'}}</strong></p>
+    </div>

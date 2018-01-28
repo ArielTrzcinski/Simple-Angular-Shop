@@ -1,0 +1,29 @@
+.header {
+    background:#fff;
+    padding: 13px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 7px 0px rgba(82,79,82,1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.levels {
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+}
+
+.other-content  {
+    font-size: 20px;
+    font-weight: 300;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cartIcon {
+    margin-right: 20px;
+    font-size: 40px;
+}
